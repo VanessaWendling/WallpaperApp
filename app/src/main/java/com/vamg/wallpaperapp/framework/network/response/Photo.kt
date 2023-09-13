@@ -1,6 +1,8 @@
 package com.vamg.wallpaperapp.framework.network.response
 
 import com.google.gson.annotations.SerializedName
+import com.vamg.core.domain.model.PhotoDomain
+import com.vamg.core.domain.model.SrcDomain
 
 data class Photo(
     @SerializedName("alt")
@@ -26,3 +28,24 @@ data class Photo(
     @SerializedName("width")
     val width: Int
 )
+
+fun Photo.toPhotoDomain(): PhotoDomain =
+    PhotoDomain(
+        description = this.alt,
+        avgColor = this.avgColor,
+        id = this.id,
+        photographer = this.photographer,
+        photographerId = this.photographerId,
+        photographerUrl = this.photographerUrl,
+        srcDomain = SrcDomain(
+            landscape = this.src.landscape,
+            large = this.src.large,
+            large2x = this.src.large2x,
+            medium = this.src.medium,
+            original = this.src.original,
+            portrait = this.src.portrait,
+            small = this.src.small,
+            tiny = this.src.tiny,
+        ),
+        url = this.url
+    )
