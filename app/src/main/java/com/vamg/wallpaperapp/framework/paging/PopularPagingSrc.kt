@@ -7,8 +7,9 @@ import com.vamg.core.domain.model.PhotoDomain
 import com.vamg.wallpaperapp.framework.network.response.DataWrapperResponse
 import com.vamg.wallpaperapp.framework.network.response.toPhotoDomain
 import java.lang.Exception
+import javax.inject.Inject
 
-class PopularPagingSrc(
+class PopularPagingSrc @Inject constructor(
     private val dataSrc: PopularRemoteDataSrc<DataWrapperResponse>,
     private val pages: Int
 ) : PagingSource<Int, PhotoDomain>() {

@@ -7,18 +7,20 @@ import com.vamg.core.data.repository.PopularRepository
 import com.vamg.core.domain.model.PhotoDomain
 import com.vamg.core.usecase.PagingUseCase
 import kotlinx.coroutines.flow.Flow
+import javax.inject.Inject
 
-interface GetPopularUseCase{
+interface GetPopularUseCase {
     operator fun invoke(params: GetPopularParams): Flow<PagingData<PhotoDomain>>
 
     data class GetPopularParams(val pagingConfig: PagingConfig)
 }
-class GetPopularUseCaseImpl(
+
+class GetPopularUseCaseImpl @Inject constructor(
     private val repository: PopularRepository
 ) : PagingUseCase<GetPopularUseCase.GetPopularParams, PhotoDomain>(), GetPopularUseCase {
     override fun createFlowObservable(params: GetPopularUseCase.GetPopularParams): Flow<PagingData<PhotoDomain>> {
         val pagingSource = repository.fetchPopular(pages = params.pagingConfig.pageSize)
-        return Pager(config = params.pagingConfig){
+        return Pager(config = params.pagingConfig) {
             pagingSource
         }.flow
     }
