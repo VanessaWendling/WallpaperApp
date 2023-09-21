@@ -14,11 +14,14 @@ import javax.inject.Inject
 @HiltViewModel
 class PopularViewModel @Inject constructor(
     private val popularUseCase: GetPopularUseCase
-) : ViewModel() {
-    fun popularWallpaper(): Flow<PagingData<PhotoDomain>> {
-        return popularUseCase.invoke(GetPopularUseCase.GetPopularParams(getPagingConfig()))
-            .cachedIn(viewModelScope)
+): ViewModel() {
+
+    fun popularWallpapers(): Flow<PagingData<PhotoDomain>> {
+        return popularUseCase(
+            GetPopularUseCase.GetPopularParams(getPagingConfig())
+        ).cachedIn(viewModelScope)
     }
 
     private fun getPagingConfig() = PagingConfig(pageSize = 40)
+
 }

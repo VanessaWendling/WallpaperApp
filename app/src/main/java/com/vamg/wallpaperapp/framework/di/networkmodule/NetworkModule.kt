@@ -25,6 +25,10 @@ object NetworkModule {
         setLevel(if (BuildConfig.DEBUG) HttpLoggingInterceptor.Level.BODY else HttpLoggingInterceptor.Level.NONE)
     }
 
+//    @Provides
+//    fun provideAuthorizationInterceptor(): AuthorizationInterceptor =
+//        AuthorizationInterceptor(BuildConfig.PRIVATE_KEY)
+
     @Provides
     fun provideOkhttpClient(
         loggingInterceptor: HttpLoggingInterceptor,
