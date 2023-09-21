@@ -16,3 +16,4 @@ dependencyResolutionManagement {
 rootProject.name = "WallpaperApp"
 include ':app'
 include ':core'
+include ':testing'
