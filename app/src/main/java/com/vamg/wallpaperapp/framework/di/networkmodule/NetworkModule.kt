@@ -9,14 +9,14 @@ import com.vamg.wallpaperapp.framework.network.retrofit.ApiClient
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.components.ViewModelComponent
+import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 @Module
-@InstallIn(ViewModelComponent::class)
+@InstallIn(SingletonComponent::class)
 object NetworkModule {
     private const val TIMEOUT_SECONDS = 15L
 
@@ -25,9 +25,9 @@ object NetworkModule {
         setLevel(if (BuildConfig.DEBUG) HttpLoggingInterceptor.Level.BODY else HttpLoggingInterceptor.Level.NONE)
     }
 
-//    @Provides
-//    fun provideAuthorizationInterceptor(): AuthorizationInterceptor =
-//        AuthorizationInterceptor(BuildConfig.PRIVATE_KEY)
+    @Provides
+    fun provideAuthorizationInterceptor(): AuthorizationInterceptor =
+        AuthorizationInterceptor(BuildConfig.PRIVATE_KEY)
 
     @Provides
     fun provideOkhttpClient(

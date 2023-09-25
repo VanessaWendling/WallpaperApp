@@ -45,6 +45,14 @@ class PopularViewModelTest {
 
     private val wallpapersFactory = WallpapersFactory()
 
+    @Test(expected = RuntimeException::class)
+    fun `Should return an empty PagingData When an error occurred`() = runTest{
+        whenever(popularUseCase(any())).thenThrow(RuntimeException())
+
+        popularViewModel.popularWallpapers()
+    }
+
+
     private val getPagingDataMock =
         PagingData.from(
             listOf(
