@@ -1,11 +1,11 @@
-package com.vamg.core.usecase.popularUseCase
+package com.vamg.core.usecase.base.popularUseCase
 
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import com.vamg.core.data.repository.PopularRepository
 import com.vamg.core.domain.model.PhotoDomain
-import com.vamg.core.usecase.PagingUseCase
+import com.vamg.core.usecase.base.PagingUseCase
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 

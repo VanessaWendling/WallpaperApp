@@ -1,12 +1,11 @@
 package com.vamg.wallpaperapp.framework.di.usecasemodule
 
-import com.vamg.core.usecase.popularUseCase.GetPopularUseCase
-import com.vamg.core.usecase.popularUseCase.GetPopularUseCaseImpl
+import com.vamg.core.usecase.base.popularUseCase.GetPopularUseCase
+import com.vamg.core.usecase.base.popularUseCase.GetPopularUseCaseImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ViewModelComponent
-import dagger.hilt.components.SingletonComponent
 
 @Module
 @InstallIn(ViewModelComponent::class)

@@ -6,8 +6,10 @@ import com.vamg.core.domain.model.SrcDomain
 class WallpapersFactory {
     fun create(photo: Photo) = when (photo) {
         Photo.PhotoDomainSuccess -> photoDomain
+        //posso criar o mock de error
     }
 
+    //sealed class - cria hierarquia de classe
     sealed class Photo {
         object PhotoDomainSuccess : Photo()
     }
