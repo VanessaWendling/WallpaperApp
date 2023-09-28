@@ -38,10 +38,11 @@ android {
             initWith debug
             minifyEnabled true
             applicationIdSuffix '.staging'
+            //proguard ofusca a aplicação
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         release {
-            shrinkResources true
+            shrinkResources true //tira tudo que é desnecessário
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }

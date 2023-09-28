@@ -4,7 +4,12 @@ import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-public class ApiClient<T>(url: String, okHttpClient: OkHttpClient, converterFactory: GsonConverterFactory) {
+public class ApiClient<T>(
+    url: String,
+    okHttpClient: OkHttpClient,
+    converterFactory: GsonConverterFactory
+) {
+    //    factory - recebe e converte em algo
     private val retrofit = Retrofit.Builder()
         .baseUrl(url)
         .client(okHttpClient)

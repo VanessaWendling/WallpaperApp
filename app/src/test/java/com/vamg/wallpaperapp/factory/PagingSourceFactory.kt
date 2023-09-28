@@ -1,10 +1,11 @@
-package com.vamg.testing.pagingsource
+package com.vamg.wallpaperapp.factory
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.vamg.core.domain.model.PhotoDomain
 
 class PagingSourceFactory {
+
     fun create(photos: List<PhotoDomain>) = object : PagingSource<Int, PhotoDomain>() {
         override fun getRefreshKey(state: PagingState<Int, PhotoDomain>): Int = 1
 

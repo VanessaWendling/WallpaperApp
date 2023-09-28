@@ -8,11 +8,11 @@ import com.vamg.wallpaperapp.framework.network.response.DataWrapperResponse
 import com.vamg.wallpaperapp.framework.paging.PopularPagingSrc
 import javax.inject.Inject
 
-class PopularRepositoryImpl @Inject constructor
-    (private val remoteDataSrc: PopularRemoteDataSrc<DataWrapperResponse>) :
+class PopularRepositoryImpl @Inject constructor(
+    private val remoteDataSrc: PopularRemoteDataSrc<DataWrapperResponse>
+) :
     PopularRepository {
     override fun fetchPopular(pages: Int): PagingSource<Int, PhotoDomain> {
-        return PopularPagingSrc(remoteDataSrc, pages);
+        return PopularPagingSrc(remoteDataSrc, pages)
     }
-
 }
