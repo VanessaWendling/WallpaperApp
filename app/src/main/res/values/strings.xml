@@ -1,5 +1,23 @@
 <resources>
     <string name="app_name">WallpaperApp</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="wallPaper">WallPapers</string>
+    <string name="categories">Categories</string>
+    <string name="back">back</string>
+
+    <string name="download">downLoad</string>
+    <string name="set_wallpaper">Set Wallpaper</string>
+    <string name="download_image">download</string>
+    <string name="set_both">set both</string>
+    <string name="set_as_background">set as background</string>
+    <string name="set_as_lockscreen">set as lockscreen</string>
+    <string name="search">search</string>
+    <string name="retry">retry</string>
+    <string name="error_loading_more_try_again">Error when trying to load the next page. Try again</string>
+    <string name="delete_error">error when trying to delete photo</string>
+    <string name="delete_error_success">deleted</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="want_delete">Are you sure you want to delete this image from the gallery?</string>
+    <string name="enable_background">Ativar a função de tela de descanso</string>
 </resources>
