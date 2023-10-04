@@ -11,11 +11,13 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.findNavController
 import androidx.paging.LoadState
 import androidx.recyclerview.widget.GridLayoutManager
 import com.vamg.core.domain.model.PhotoDomain
 import com.vamg.wallpaperapp.databinding.FragmentPopularBinding
 import com.vamg.wallpaperapp.ui.fragment.adapter.photoadapter.PhotoAdapter
+import com.vamg.wallpaperapp.ui.fragment.main.MainFragmentDirections
 import com.vamg.wallpaperapp.ui.fragment.popular.viewmodel.PopularViewModel
 import com.vamg.wallpaperapp.util.animationCancel
 import com.vamg.wallpaperapp.util.pulseAnimation
@@ -88,7 +90,11 @@ class PopularFragment : Fragment() {
     }
 
     private fun detail(photo: PhotoDomain) {
-        Toast.makeText(requireContext(), "Clicked! ;)", Toast.LENGTH_SHORT)
-            .show()
+        val data = arrayOf(photo.srcDomain?.original, photo.avgColor)
+        findNavController().navigate(
+            MainFragmentDirections.actionMainFragmentToDownloadFragment(
+                data
+            )
+        )
     }
 }
