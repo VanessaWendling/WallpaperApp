@@ -9,7 +9,6 @@ import com.vamg.core.data.DbConstants
 import com.vamg.wallpaperapp.framework.db.entity.PhotoEntity
 import kotlinx.coroutines.flow.Flow
 
-
 @Dao
 interface WallpaperDao {
 
