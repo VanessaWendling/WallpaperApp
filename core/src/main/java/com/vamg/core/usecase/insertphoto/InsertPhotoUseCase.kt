@@ -14,7 +14,7 @@ interface InsertPhotoUseCase {
     data class Params(val photo: PhotoDomain)
 }
 
-class InsertPhotoUseClaseImpl @Inject constructor(
+class InsertPhotoUseCaseImpl @Inject constructor(
     private val repository: GalleryRepository,
     private val dispatcher: CoroutinesDispatchers
 ) : UseCase<InsertPhotoUseCase.Params, Unit>(), InsertPhotoUseCase {

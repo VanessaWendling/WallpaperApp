@@ -122,10 +122,11 @@ class PopularFragment : Fragment() {
         }
     }
 
-    fun favoriteItemMessage(message: String) {
+    private fun favoriteItemMessage(message: String) {
         Snackbar.make(binding.root, message, Snackbar.LENGTH_SHORT)
             .setAnimationMode(ANIMATION_MODE_SLIDE).show()
     }
+
 
 
 }

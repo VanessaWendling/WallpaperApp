@@ -6,7 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.google.android.material.tabs.TabLayoutMediator
+import com.vamg.wallpaperapp.R
 import com.vamg.wallpaperapp.databinding.FragmentMainBinding
 import com.vamg.wallpaperapp.framework.local.Carousel
 import com.vamg.wallpaperapp.ui.fragment.category.CategoryFragment
@@ -65,6 +67,10 @@ class MainFragment : Fragment() {
 
     private fun detail() {
         //captura qualquer açãod e click em alguma view
-        binding.fab.setOnClickListener {}
+        binding.fab.setOnClickListener {
+            findNavController().navigate(R.id.action_mainFragment_to_galleryFragment)
+        }
     }
+
+
 }
