@@ -1,18 +1,16 @@
 package com.vamg.wallpaperapp.ui.fragment.gallery
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.google.android.material.snackbar.BaseTransientBottomBar
 import com.google.android.material.snackbar.Snackbar
 import com.vamg.core.domain.model.PhotoDomain
-import com.vamg.wallpaperapp.R
-import com.vamg.wallpaperapp.databinding.FragmentCategoryBinding
 import com.vamg.wallpaperapp.databinding.FragmentGalleryBinding
 import com.vamg.wallpaperapp.ui.fragment.adapter.galleryadapter.GalleryAdapter
 import com.vamg.wallpaperapp.ui.fragment.gallery.viewmodel.GalleryViewModel
@@ -70,7 +68,7 @@ class GalleryFragment : Fragment() {
     }
 
     private fun delete(photoDomain: PhotoDomain) {
-
+        viewModel.deletePhoto(photoDomain)
     }
 
     private fun backButton() {
