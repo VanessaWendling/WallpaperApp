@@ -40,7 +40,7 @@ android {
             minifyEnabled true
             applicationIdSuffix '.staging'
             //proguard ofusca a aplicação
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro', 'proguard-ruless-staging.pro'
         }
         release {
             shrinkResources true //tira tudo que é desnecessário
