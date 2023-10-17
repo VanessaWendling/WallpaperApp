@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "169242695843",
+    "project_id": "wallpaperapp-b7de1",
+    "storage_bucket": "wallpaperapp-b7de1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:169242695843:android:a22b8eb14003493cdbc716",
+        "android_client_info": {
+          "package_name": "com.vamg.wallpaperapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtDTAdnKm9hJLEJz8TYmV3Yeohv0YbBCw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:169242695843:android:5eac629d4a5464a8dbc716",
+        "android_client_info": {
+          "package_name": "com.vamg.wallpaperapp.debug"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtDTAdnKm9hJLEJz8TYmV3Yeohv0YbBCw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:169242695843:android:5733514e005fc287dbc716",
+        "android_client_info": {
+          "package_name": "com.vamg.wallpaperapp.staging"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtDTAdnKm9hJLEJz8TYmV3Yeohv0YbBCw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
