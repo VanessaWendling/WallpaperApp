@@ -8,7 +8,9 @@ import androidx.lifecycle.liveData
 import androidx.lifecycle.switchMap
 import com.vamg.core.domain.model.PhotoDomain
 import com.vamg.core.usecase.base.CoroutinesDispatchers
+import com.vamg.core.usecase.deletePhoto.DeletePhotoUseCase
 import com.vamg.core.usecase.getallphotos.GetAllPhotosUseCase
+import com.vamg.wallpaperapp.extentions.watchStatus
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.collect
@@ -17,6 +19,7 @@ import javax.inject.Inject
 @HiltViewModel
 class GalleryViewModel @Inject constructor(
     private val getAllPhotosUseCase: GetAllPhotosUseCase,
+    private val deletePhotoUseCase: DeletePhotoUseCase,
     private val dispatchers: CoroutinesDispatchers
 ) : ViewModel() {
 
@@ -30,11 +33,19 @@ class GalleryViewModel @Inject constructor(
     val state: LiveData<UiState> = action.switchMap { action ->
         liveData(dispatchers.main()) {
             when (action) {
-                is Action.GetGallery -> { get() }
+                is Action.GetGallery -> {
+                    get()
+                }
 
-                is Action.DeleteFavorite -> {}
+                is Action.DeleteFavorite -> {
+                    delete(action)
+                }
             }
         }
+    }
+
+    fun deleteFavorite(photoDomain: PhotoDomain) {
+        action.value = Action.DeleteFavorite(photoDomain)
     }
 
     private suspend fun LiveDataScope<UiState>.get() {
@@ -48,6 +59,14 @@ class GalleryViewModel @Inject constructor(
 
             emit(uiState)
         }
+    }
+
+    private suspend fun LiveDataScope<UiState>.delete(action: Action.DeleteFavorite) {
+        deletePhotoUseCase(DeletePhotoUseCase.Params(action.photoDomain)).watchStatus(
+            loading = {},
+            success = { getGallery() },
+            error = { emit(UiState.Error) }
+        )
     }
 
     private fun getGallery() {

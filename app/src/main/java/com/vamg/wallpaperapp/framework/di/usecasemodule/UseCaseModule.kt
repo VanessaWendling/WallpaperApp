@@ -2,6 +2,8 @@ package com.vamg.wallpaperapp.framework.di.usecasemodule
 
 import com.vamg.core.usecase.base.popularUseCase.GetPopularUseCase
 import com.vamg.core.usecase.base.popularUseCase.GetPopularUseCaseImpl
+import com.vamg.core.usecase.deletePhoto.DeletePhotoUseCase
+import com.vamg.core.usecase.deletePhoto.DeletePhotoUseCaseImpl
 import com.vamg.core.usecase.getallphotos.GetAllPhotosUseCase
 import com.vamg.core.usecase.getallphotos.GetAllPhotosUseCaseImpl
 import com.vamg.core.usecase.insertphoto.InsertPhotoUseCase
@@ -23,4 +25,7 @@ interface UseCaseModule {
 
     @Binds
     fun bindGetAllPhotosUseCase(useCase: GetAllPhotosUseCaseImpl): GetAllPhotosUseCase
+
+    @Binds
+    fun bindDeletePhotoUseCase(useCase: DeletePhotoUseCaseImpl): DeletePhotoUseCase
 }
