@@ -24,6 +24,7 @@ dependencies {
     api("com.squareup.okhttp3:okhttp")
     api("com.squareup.okhttp3:logging-interceptor")
 
+
     // Paging3 Common
     implementation "androidx.paging:paging-common:$paging_version"
 
