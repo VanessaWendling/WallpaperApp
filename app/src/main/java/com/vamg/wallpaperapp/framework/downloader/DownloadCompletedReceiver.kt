@@ -5,7 +5,7 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 
-const val DEFAULT_VALUE = -1L;
+const val DEFAULT_VALUE = -1L
 
 class DownloadCompletedReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context?, intent: Intent?) {

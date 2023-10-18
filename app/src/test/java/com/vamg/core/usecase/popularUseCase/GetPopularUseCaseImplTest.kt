@@ -28,7 +28,7 @@ class GetPopularUseCaseImplTest {
     var mainCoroutineRule = MainCoroutineRule()
 
     @Mock
-    lateinit var repository: PopularRepository;
+    lateinit var repository: PopularRepository
 
     private val photos = WallpapersFactory().create(WallpapersFactory.Photo.PhotoDomainSuccess)
     private val mockPagingSource = PagingSourceFactory().create(listOf(photos))
