@@ -22,6 +22,7 @@
         android:name="com.vamg.wallpaperapp.ui.fragment.downloadfragment.DownloadFragment"
         android:label="fragment_download"
         tools:layout="@layout/fragment_download">
+        <!--suppress NavigationFile -->
         <argument
             android:name="image"
             app:argType="string[]" />
