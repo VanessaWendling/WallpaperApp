@@ -13,6 +13,6 @@ class AuthorizationInterceptor(private val privateKey: String) : Interceptor {
             .url(request.url)
             .build()
 
-        return chain.proceed(newRequest);
+        return chain.proceed(newRequest)
     }
 }
